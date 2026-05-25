@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentação API - TriniumHost</title>
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #161b22;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #1f6feb;
+    }
+    header h1 {
+      color: #58a6ff;
+      margin: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    .endpoint {
+      background: #161b22;
+      border-left: 4px solid #1f6feb;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(31,111,235,0.2);
+    }
+    .endpoint h2 {
+      color: #58a6ff;
+      margin-top: 0;
+    }
+    code {
+      background: #0d1117;
+      padding: 3px 6px;
+      border-radius: 4px;
+      color: #79c0ff;
+    }
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      border-top: 1px solid #1f6feb;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #8b949e;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📘 Documentação da API - TriniumHost</h1>
+    <p>Base URL: <a href="https://api.triniumhost.com/" target="_blank">https://api.triniumhost.com/</a></p>
+  </header>
+  
+  <div class="container">
+
+    <div class="endpoint">
+      <h2>GET /</h2>
+      <p><strong>Descrição:</strong> Verifica o status da API.</p>
+      <p><strong>Exemplo:</strong> <code>https://api.triniumhost.com/</code></p>
+      <p><strong>Resposta:</strong></p>
+      <pre>{
+  "status": 200,
+  "message": "Todos os servidores online"
+}</pre>
+    </div>
+
+    <div class="endpoint">
+      <h2>GET /list</h2>
+      <p><strong>Descrição:</strong> Lista todos os servidores do usuário autenticado.</p>
+      <p><strong>Parâmetros:</strong></p>
+      <ul>
+        <li><code>apikey</code> (string) - chave de acesso do usuário.</li>
+      </ul>
+      <p><strong>Exemplo:</strong> <code>https://api.triniumhost.com/list?apikey=SUA_API_KEY</code></p>
+    </div>
+
+    <div class="endpoint">
+      <h2>GET /power</h2>
+      <p><strong>Descrição:</strong> Controla o servidor (ligar, desligar, reiniciar ou forçar parada).</p>
+      <p><strong>Parâmetros:</strong></p>
+      <ul>
+        <li><code>apikey</code> (string) - chave de acesso do usuário.</li>
+        <li><code>id</code> (string) - ID do servidor.</li>
+        <li><code>action</code> (string) - ação desejada (<code>start</code>, <code>stop</code>, <code>restart</code>, <code>kill</code>).</li>
+      </ul>
+      <p><strong>Exemplo:</strong> <code>https://api.triniumhost.com/power?apikey=SUA_API_KEY&id=123&action=restart</code></p>
+      <p><strong>Resposta:</strong></p>
+      <pre>{
+  "message": "Ação 'restart' executada no servidor 123"
+}</pre>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 TriniumHost - Documentação para clientes
+  </footer>
+</body>
+</html>
